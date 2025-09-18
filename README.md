@@ -1,5 +1,5 @@
 # ASIR2
- Si tu supieras que por ti me mueroooo que yo te quierooo te quiero te quieroo te quierooo.
+ Si tu supieras que por ti me mueroo que yo te quierooo te quiero te quieroo te quierooo.
 ## READMES
 [ASGBG](ASGBD/Readme.md) ---
 [IAW](IAW/Readme.md) ---
@@ -7,4 +7,3 @@
 [SAD](SAD/Readme.md) 
 
 ---
-asdonaid
