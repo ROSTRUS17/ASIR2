@@ -19,7 +19,7 @@ Elijo esta extensión por la facilidad de probar y ejecutar scripts directamente
 ---
 
 ## Pylance
-![Imagen Pylance](/IAW/Extensiones/imagenes/Jupyter.png)
+![Imagen Pylance](/IAW/Extensiones/imagenes/Pylance.png)
 
 **Descripción:**  
 **Pylance** mejora enormemente la experiencia de desarrollo en Python al proporcionar un **motor de análisis estático muy rápido y preciso**.  
