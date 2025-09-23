@@ -5,17 +5,9 @@
 - [PHP Debug](#php-debug)
 - [PHP Namespace Resolver](#php-namespace-resolver)
 
----# Extensiones de PHP para Visual Studio Code
-
-## Índice
-- [PHP Intelephense](#php-intelephense)
-- [PHP Debug](#php-debug)
-- [PHP Namespace Resolver](#php-namespace-resolver)
-
----
 
 ## PHP Intelephense
-![Imagen PHP Intelephense](ROSTRUS17/ASIR2/PEP/Extensiones/Imagenes/Intelephense.png)
+![Imagen PHP Intelephense](/PEP/Extensiones/Imagenes/Intelephense.png)
 **Descripción:**  
 PHP Intelephense es una de las extensiones más populares para trabajar con PHP en Visual Studio Code.  
 Proporciona **autocompletado inteligente, detección de errores, referencias, saltos de definición, soporte para namespaces** y mucho más.  
@@ -26,7 +18,7 @@ Elijo esta extensión por la facilidad de programar con autocompletado de palabr
 ---
 
 ## PHP Debug
-![Imagen PHP Debug](ROSTRUS17/ASIR2/PEP/Extensiones/Imagenes/Debug.png)
+![Imagen PHP Debug](/PEP/Extensiones/Imagenes/Debug.png)
 
 **Descripción:**  
 PHP Debug permite integrar **Xdebug** con Visual Studio Code.  
@@ -38,7 +30,7 @@ Elijo esta extensión por la facilidad de detectar y resolver errores lógicos.
 ---
 
 ## PHP Namespace Resolver
-![Imagen PHP Namespace Resolver](ROSTRUS17/ASIR2/PEP/Extensiones/Imagenes/Resolver.png)
+![Imagen PHP Namespace Resolver](/PEP/Extensiones/Imagenes/Resolver.png)
 
 **Descripción:**  
 PHP Namespace Resolver ayuda a **importar clases, interfaces o traits** de forma automática en PHP.  
@@ -46,3 +38,7 @@ Detecta las dependencias y añade las sentencias `use` necesarias, ahorrando tie
 Es especialmente útil en proyectos que siguen **PSR-4** o que manejan muchos archivos y clases.
 
 Elijo esta extensión por la facilidad de organizar imports automaticamente.
+
+---
+
+A parte descarto la extendión de PHP Sniffer & Beautifer porque se centra en estandarizar el estilo del codigo y pienso que como principiante es mejor aprender a programar bien antes que eso.
