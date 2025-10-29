@@ -48,9 +48,11 @@ Esto hará que se repita a las 23:59
 
 ### 4. Preguntas sin Chatgpt ni IAs:
 
-    ¿Cómo impactan los cambios en el PRAGMA en el rendimiento y la seguridad de la base de datos? MariaDB usa Variables de Sistema (no PRAGMAS). Afectan el rendimiento al controlar el uso de memoria (innodb_buffer_pool_size) y el límite de consultas lentas (long_query_time). Afectan la seguridad a través de variables de red (skip-networking) y control de privilegios de acceso.
+¿Cómo impactan los cambios en el PRAGMA en el rendimiento y la seguridad de la base de datos?
 
-    ¿Qué mecanismos adicionales usarías para proteger una base de datos SQLite en un entorno de producción?
+     MariaDB usa Variables de Sistema (no PRAGMAS). Afectan el rendimiento al controlar el uso de memoria (innodb_buffer_pool_size) y el límite de consultas lentas (long_query_time). Afectan la seguridad a través de variables de red (skip-networking) y control de privilegios de acceso.
+
+¿Qué mecanismos adicionales usarías para proteger una base de datos SQLite en un entorno de producción?
 
         Cifrado del archivo de base de datos (ej. SQLCipher).
 
@@ -58,7 +60,7 @@ Esto hará que se repita a las 23:59
 
         Almacenamiento en una ubicación segura, fuera del directorio web público.
 
-    ¿Qué diferencia existe entre los modos de journaling como DELETE, TRUNCATE y WAL en SQLite?
+¿Qué diferencia existe entre los modos de journaling como DELETE, TRUNCATE y WAL en SQLite?
 
         DELETE/TRUNCATE: Bloquean toda la base de datos (lectores y escritores) durante el COMMIT. Usan un journal de retroceso.
 
