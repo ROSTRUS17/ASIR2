@@ -1,0 +1,122 @@
+from turtle import *
+#salchicha
+
+penup()
+setpos (300,-100)
+for i in range(90):
+    forward(1)
+    left(1)
+right(90)
+pendown()
+pencolor("red")
+fillcolor("pink")
+begin_fill()
+
+for i in range(180):
+    forward(1)
+    left(1)
+forward(400)
+for i in range(180):
+    forward(1)
+    left(1)
+forward(400)
+end_fill()
+#pan de perrito
+penup()
+setpos (320,-100)
+pencolor ("orange")
+fillcolor ("orange")
+begin_fill()
+pendown()
+for i in range(180):
+    forward(1)
+    left(1)
+
+forward(320)
+
+for i in range(180):
+    forward(1)
+    left(1)
+
+forward(320)
+end_fill()
+
+#ketchup
+left(90)
+penup()
+setpos(0,40)
+pendown()
+pensize(8)
+pencolor("red")
+for i in range (180):
+    forward(0.5)
+    right(1)
+for i in range (180):
+    forward(0.5)
+    left(1)
+for i in range (180):
+    forward(0.5)
+    right(1)
+for i in range (180):
+    forward(0.5)
+    left(1)
+for i in range (180):
+    forward(0.5)
+    right(1)
+for i in range (180):
+    forward(0.5)
+    left(1)
+
+#mostaza bote
+
+penup()
+setpos(-100,100)
+pendown()
+forward(50)
+pencolor("black")
+fillcolor("yellow")
+begin_fill()
+
+for i in range (90):
+    forward(0.2)
+    left(1)
+forward (50)
+for i in range (90):
+    forward(0.2)
+    left(1)
+forward (50)
+for i in range (90):
+    forward(0.2)
+    left(1)
+forward (50)
+for i in range (90):
+    forward(0.2)
+    left(1)
+end_fill()
+
+#mostaza
+#ketchup
+penup()
+setpos(0,45)
+pendown()
+pensize(5)
+pencolor("yellow")
+for i in range (180):
+    forward(0.5)
+    right(1)
+for i in range (180):
+    forward(0.5)
+    left(1)
+for i in range (180):
+    forward(0.5)
+    right(1)
+for i in range (180):
+    forward(0.5)
+    left(1)
+for i in range (180):
+    forward(0.5)
+    right(1)
+for i in range (180):
+    forward(0.5)
+    left(1)
+done()
