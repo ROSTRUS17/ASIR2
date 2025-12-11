@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ASIR Portfolio</title>
+    <style>
+        /* CSS BÁSICO - ESTILO PRINCIPIANTE */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Menú de navegación simple */
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcc00; /* Un color amarillo básico al pasar el ratón */
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        /* Estilo para cada asignatura/sección */
+        .module-section {
+            margin-bottom: 40px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
+
+        .module-title {
+            color: #0056b3;
+            text-transform: uppercase;
+        }
+
+        /* La "tarjeta" del desafío - PLANTILLA */
+        .challenge-card {
+            border: 2px solid #000;
+            background-color: #eef;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px; /* Un poco redondeado, pero poco */
+        }
+
+        .challenge-card h3 {
+            margin-top: 0;
+            background-color: #ddd;
+            padding: 5px;
+        }
+
+        .glossary-list {
+            background-color: #fff;
+            border: 1px dashed #999;
+            padding: 10px 20px;
+        }
+
+        /* RESPONSIVE: Código para móvil */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+            
+            nav a {
+                display: block; /* Pone los enlaces uno debajo de otro en móvil */
+                margin: 10px 0;
+                border-bottom: 1px solid #555;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My ASIR 2 Portfolio</h1>
+        <p>Student: [Tu Nombre Aquí]</p>
+    </header>
+
+    <nav>
+        <a href="#seguridad">Security</a>
+        <a href="#bases2">Bases 2</a>
+        <a href="#iaw">IAW</a>
+        <a href="#python">Python</a>
+        <a href="#global">Global</a>
+    </nav>
+
+    <div class="container">
+        
+        <p>Welcome to my portfolio for the second year of ASIR. Here you can find all my challenges and projects.</p>
+
+        <div id="seguridad" class="module-section">
+            <h2 class="module-title">Module: SEGURIDAD</h2>
+
+            <div class="challenge-card">
+                <h3>Challenge Name: Firewall Configuration (Example)</h3>
+                
+                <p><strong>1. Summary:</strong><br>
+                In this challenge, I had to configure iptables to block specific ports and allow SSH connections only from one IP address.</p>
+
+                <p><strong>2. Complex Concepts Learned:</strong></p>
+                <ul>
+                    <li>Stateful Packet Inspection (SPI).</li>
+                    <li>The difference between INPUT and FORWARD chains.</li>
+                </ul>
+
+                <p><strong>3. Feelings:</strong><br>
+                I felt a bit frustrated at the beginning because I locked myself out of the server, but finally, I felt very happy when it worked.</p>
+
+                <p><strong>4. Improvements:</strong><br>
+                I would improve the script by adding comments to explain each rule better.</p>
+
+                <p><strong>5. Technical Glossary:</strong></p>
+                <ul class="glossary-list">
+                    <li><strong>Payload:</strong> The actual data in a packet.</li>
+                    <li><strong>Handshake:</strong> The process of negotiating a connection.</li>
+                    <li><strong>Rule:</strong> A specific instruction for the firewall.</li>
+                    <li><strong>Log:</strong> A record of events.</li>
+                    <li><strong>Denied:</strong> Access rejected.</li>
+                </ul>
+
+                <p><strong>6. Rating and Feedback:</strong><br>
+                <strong>Score:</strong> 8/10.<br>
+                I liked it because it was practical. I would improve the instructions about saving the rules persistently.</p>
+            </div>
+            </div>
+
+        <div id="python" class="module-section">
+            <h2 class="module-title">Module: PYTHON</h2>
+
+            <div class="challenge-card">
+                <h3>Challenge Name: Web Scraper</h3>
+                
+                <p><strong>1. Summary:</strong><br>
+                We had to create a script to extract data from a website automatically.</p>
+
+                <p><strong>2. Complex Concepts Learned:</strong></p>
+                <ul>
+                    <li>HTML Parsing with libraries.</li>
+                    <li>Handling HTTP Requests.</li>
+                </ul>
+
+                <p><strong>3. Feelings:</strong><br>
+                Very easy. I like programming so this was fun.</p>
+
+                <p><strong>4. Improvements:</strong><br>
+                I should add error handling (try/except) if the website is down.</p>
+
+                <p><strong>5. Technical Glossary:</strong></p>
+                <ul class="glossary-list">
+                    <li><strong>String:</strong> A sequence of characters.</li>
+                    <li><strong>Integer:</strong> A whole number.</li>
+                    <li><strong>Loop:</strong> Repeating a block of code.</li>
+                    <li><strong>Variable:</strong> A container for data.</li>
+                    <li><strong>Function:</strong> A block of code designed to perform a particular task.</li>
+                </ul>
+
+                <p><strong>6. Rating and Feedback:</strong><br>
+                <strong>Score:</strong> 10/10.<br>
+                Perfect assignment. Clear and useful.</p>
+            </div>
+        </div>
+
+        <div id="bases2" class="module-section">
+            <h2 class="module-title">Module: BASES 2</h2>
+            <p><em>No projects yet. Copy the card code here when ready.</em></p>
+        </div>
+
+        <div id="iaw" class="module-section">
+            <h2 class="module-title">Module: IAW</h2>
+            <p><em>No projects yet. Copy the card code here when ready.</em></p>
+        </div>
+
+         <div id="global" class="module-section">
+            <h2 class="module-title">Module: GLOBAL</h2>
+            <p><em>No projects yet. Copy the card code here when ready.</em></p>
+        </div>
+
+    </div>
+
+    <footer style="background-color: #333; color: white; text-align: center; padding: 10px; margin-top: 20px;">
+        <p>&copy; 2025 My Student Portfolio</p>
+    </footer>
+
+</body>
+</html>
