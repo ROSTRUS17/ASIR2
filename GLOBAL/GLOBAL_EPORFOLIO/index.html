@@ -1,212 +1,612 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My ASIR Portfolio</title>
-    <style>
-        /* CSS BÁSICO - ESTILO PRINCIPIANTE */
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Menú de navegación simple */
-        nav {
-            background-color: #444;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #ffcc00; /* Un color amarillo básico al pasar el ratón */
-        }
-
-        /* Contenedor principal */
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            border: 1px solid #ccc;
-        }
-
-        /* Estilo para cada asignatura/sección */
-        .module-section {
-            margin-bottom: 40px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 20px;
-        }
-
-        .module-title {
-            color: #0056b3;
-            text-transform: uppercase;
-        }
-
-        /* La "tarjeta" del desafío - PLANTILLA */
-        .challenge-card {
-            border: 2px solid #000;
-            background-color: #eef;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 5px; /* Un poco redondeado, pero poco */
-        }
-
-        .challenge-card h3 {
-            margin-top: 0;
-            background-color: #ddd;
-            padding: 5px;
-        }
-
-        .glossary-list {
-            background-color: #fff;
-            border: 1px dashed #999;
-            padding: 10px 20px;
-        }
-
-        /* RESPONSIVE: Código para móvil */
-        @media (max-width: 600px) {
-            .container {
-                width: 95%;
-            }
-            
-            nav a {
-                display: block; /* Pone los enlaces uno debajo de otro en móvil */
-                margin: 10px 0;
-                border-bottom: 1px solid #555;
-            }
-        }
-    </style>
+    <title>ASIR Second Year</title>
 </head>
+
 <body>
+    <h1>⭐ ASIR Second Year Challenge Portfolio 💻</h1>
 
-    <header>
-        <h1>My ASIR 2 Portfolio</h1>
-        <p>Student: [Tu Nombre Aquí]</p>
-    </header>
+    <p>
+        Welcome to my portfolio for the second year of ASIR.
+        <br>
+        This page summarizes the work and challenges from the modules: 
+        <strong>SECURITY, DATABASES, IAW, PYTHON</strong>.
+    </p>
 
-    <nav>
-        <a href="#seguridad">Security</a>
-        <a href="#bases2">Bases 2</a>
-        <a href="#iaw">IAW</a>
-        <a href="#python">Python</a>
-        <a href="#global">Global</a>
-    </nav>
+    <hr>
+    <h2>🚀 Index</h2>
+    <ul>
+        <li><strong><a href="#security">Module: SECURITY</a></strong></li>
+        <li><strong><a href="#bases2">Module: BASES2</a></strong></li>
+        <li><strong><a href="#iaw">Module: IAW</a></strong></li>
+        <li><strong><a href="#python">Module: PYTHON</a></strong></li>
+        <li><strong><a href="#glossary">📝 Technical Glossary</a></strong></li>
+    </ul>
 
-    <div class="container">
+    <hr>
+    
+    <a name="security"></a>
+    <h2 align="center">🛡️ CYBERSECURITY </h2>
+    <br>
+
+    <h3>ATTACK_SIMULATION_RA123</h3>
+    <ol>
+        <li><strong>Summary:</strong> We used **Kali Purple** to simulate brute-force attacks. First, we generated custom password dictionaries using **Pydictor** (creating number and letter lists) and merged them with **Dymerge**. Then, we used these dictionaries with **Hydra** to attack a local SSH server and a web login form (DVWA).</li>
         
-        <p>Welcome to my portfolio for the second year of ASIR. Here you can find all my challenges and projects.</p>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>Dictionary Attack workflow:</strong> Understanding that a brute-force attack is only as good as the wordlist you use. Merging lists is key.</li>
+                <li><strong>Hydra Syntax:</strong> Learning the specific flags for Hydra (like `-L` for user list vs `-l` for single user, and the http-post-form syntax) was tricky.</li>
+            </ul>
+        </li>
+        
+        <li><strong>How I Felt:</strong>  **SUPER COOL 😎**. Watching Hydra crack the password and show the green text was very satisfying. I felt like Mr. Robot, although configuring the SSH server at the beginning was a bit boring.</li>
+        
+        <li><strong>What I'd Improve:</strong> My dictionary was too small/simple. In a real scenario, I should use bigger wordlists like *rockyou.txt* or generate more complex permutations with Pydictor.</li>
+        
+        <li><strong>Glossary words:</strong> *Brute Force*, *Wordlist*, *SSH (Secure Shell)*, *HTTP POST*, *Base64*.</li>
+        
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 9/10.</li>
+                <li><strong>Why:</strong> Very practical.</li>
+                <li><strong>Improvement:</strong> The instructions were vague.</li>
+            </ul>
+        </li>
+    </ol>
+    <br>
 
-        <div id="seguridad" class="module-section">
-            <h2 class="module-title">Module: SEGURIDAD</h2>
+    <h3>COMAN2_LINUX_RA1</h3>
+    <ol>
+        <li><strong>Summary:</strong> A massive exercise on managing users, groups, and permissions. We worked with `chmod`, `chown`, and special permissions like **Sticky Bit**, **SUID**, and **SGID** in collaborative folders. We also practiced finding files using `grep` (content), `find` (properties), and `locate` inside a simulated directory structure with logs and scripts.</li>
+        
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>ACLs (Access Control Lists):</strong> Standard permissions (rwx) are not enough when you need a specific user to read a file but not the rest of the group. `setfacl` saved my life here.</li>
+                <li><strong>Sticky Bit vs SGID:</strong> SGID inherits the group (good for shared folders), but Sticky Bit prevents users from deleting each other's files (good for /tmp). Confusing at first!</li>
+            </ul>
+        </li>
+        
+        <li><strong>How I Felt:</strong>  **OVERWHELMED**. There were so many commands. The `grep` regex part (`^#`) to find lines without comments took me a while to figure out.</li>
+        
+        <li><strong>What I'd Improve:</strong> I should memorize the numeric codes for permissions (like 777, 644, 1777) better so I don't have to calculate them manually every time.</li>
+        
+        <li><strong>Glossary words:</strong> *ACL*, *Sticky Bit*, *SGID*, *Recursive Search*, *Regex*, *Umask*.</li>
+        
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 10/10.</li>
+                <li><strong>Why:</strong> It covers absolutely everything about Linux administration.</li>
+                <li><strong>Improvement:</strong> Maybe split it into two parts, it was very long for a single session.</li>
+            </ul>
+        </li>
+    </ol>
+    <br>
 
-            <div class="challenge-card">
-                <h3>Challenge Name: Firewall Configuration (Example)</h3>
-                
-                <p><strong>1. Summary:</strong><br>
-                In this challenge, I had to configure iptables to block specific ports and allow SSH connections only from one IP address.</p>
+    <h3>MALWARES_RA123</h3>
+    <ol>
+        <li><strong>Summary:</strong> We had to research and present in a team about different malware types: **Cryptojacking**, **Adware**, **Ransomware**, etc. The rule was "no reading from slides". We had to explain the definition, attack techniques, and real cases.</li>
+        
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>Cryptojacking:</strong> How hackers use your CPU to mine cryptocurrency without you knowing. I didn't know this could happen via web scripts (Coinhive).</li>
+                <li><strong>Social Engineering in Adware:</strong> How adware isn't just annoying pop-ups but often tricks users into installing worse malware.</li>
+            </ul>
+        </li>
+        
+        <li><strong>How I Felt:</strong> 😨 **NERVOUS**. I hate public speaking. But researching the real cases was actually interesting.</li>
+        
+        <li><strong>What I'd Improve:</strong> Our slides had too much text. Next time, more images and diagrams, and less bullet points so we are forced not to read.</li>
+        
+        <li><strong>Glossary words:</strong> *Cryptojacking*, *Ransomware*, *Adware*, *Backdoor*, *Social Engineering*.</li>
+        
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 7/10.</li>
+                <li><strong>Why:</strong> Good for soft skills, but I prefer coding.</li>
+                <li><strong>Improvement:</strong> Allow a recorded video presentation instead of live speaking.</li>
+            </ul>
+        </li>
+    </ol>
+    <br>
 
-                <p><strong>2. Complex Concepts Learned:</strong></p>
-                <ul>
-                    <li>Stateful Packet Inspection (SPI).</li>
-                    <li>The difference between INPUT and FORWARD chains.</li>
-                </ul>
+    <h3>EXPLOIT_BOOM_RA123</h3>
+    <ol>
+        <li><strong>Summary:</strong> We developed two vulnerable web apps (one in Python/Flask, one in PHP). We performed **SQL Injection** attacks to bypass login screens using payloads like `' OR 1=1 --`. Then we did **XSS (Cross-Site Scripting)** attacks. Finally, we fixed the code using "Prepared Statements" and input sanitization (`htmlspecialchars`).</li>
+        
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>Prepared Statements:</strong> Why concatenating strings in SQL is a deadly sin. Parameterized queries separate code from data.</li>
+                <li><strong>Reflected vs Persistent XSS:</strong> The difference between a script that executes once (search bar) vs one that stays in the database and hacks everyone who visits the page.</li>
+            </ul>
+        </li>
+        
+        <li><strong>How I Felt:</strong> 😈 **POWERFUL**. Bypassing a login without a password felt magical. Fixing the code made me feel like a responsible developer.</li>
+        
+        <li><strong>What I'd Improve:</strong> My PHP code for the fix was a bit messy. I should organize the files better instead of putting logic and HTML in the same file.</li>
+        
+        <li><strong>Glossary words:</strong> *SQL Injection*, *XSS (Cross-Site Scripting)*, *Payload*, *Sanitization*, *Prepared Statements*.</li>
+        
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 5/10.</li>
+                <li><strong>Why:</strong> Wasn' in the mood.
+                <li><strong>Improvement:</strong> Too complicated.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <br>
+    <a href="#">Go back to top ⬆️</a>
+    <br>
+    <hr>
 
-                <p><strong>3. Feelings:</strong><br>
-                I felt a bit frustrated at the beginning because I locked myself out of the server, but finally, I felt very happy when it worked.</p>
+    <a name="bases2"></a>
+    <h2 align="center">💾 DATABASE ADMINISTRATION</h2>
+    <br>
 
-                <p><strong>4. Improvements:</strong><br>
-                I would improve the script by adding comments to explain each rule better.</p>
+    <h3>DBA_MYSQL_RA12: Server Configuration</h3>
+    <ol>
+        <li><strong>Summary:</strong> I acted as a DBA consultant for 3 different companies. I had to configure 15 specific MySQL parameters (like `innodb_buffer_pool_size`, `max_connections`, `slow_query_log`) based on interview transcripts. I explained the "why" for each value in a table and modified the configuration files.</li>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>Buffer Pool Size:</strong> Calculating the correct RAM allocation (usually 70-80% of dedicated RAM) so the server doesn't crash.</li>
+                <li><strong>Slow Query Log:</strong> How to enable logging for queries that take longer than `long_query_time` to execute, which is essential for performance tuning.</li>
+            </ul>
+        </li>
+        <li><strong>How I Felt:</strong> 😵 **CONFUSED** at first with so many parameters. I didn't know where the config file was (`/etc/mysql/my.cnf` vs `/etc/mysql/mysql.conf.d/`). But satisfying when the service restarted correctly.</li>
+        <li><strong>What I'd Improve:</strong> I would automate the calculation of memory parameters using a script instead of doing it manually with a calculator.</li>
+        <li><strong>Glossary words:</strong> *InnoDB Buffer Pool*, *My.cnf*, *Slow Query Log*, *Bind Address*, *Performance Schema*.</li>
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 8/10.</li>
+                <li><strong>Why:</strong> Very realistic scenario (consulting).</li>
+                <li><strong>Improvement:</strong> Include more specific RAM limits for the fictional companies to make the math harder.</li>
+            </ul>
+        </li>
+    </ol>
+    <br>
 
-                <p><strong>5. Technical Glossary:</strong></p>
-                <ul class="glossary-list">
-                    <li><strong>Payload:</strong> The actual data in a packet.</li>
-                    <li><strong>Handshake:</strong> The process of negotiating a connection.</li>
-                    <li><strong>Rule:</strong> A specific instruction for the firewall.</li>
-                    <li><strong>Log:</strong> A record of events.</li>
-                    <li><strong>Denied:</strong> Access rejected.</li>
-                </ul>
+    <h3>USERS_MYSQL_RA23: User Management & "Red Social"</h3>
+    <ol>
+        <li><strong>Summary:</strong> We created a "Social Network" database with 3 tables (User, Group, Comment) and FK relationships. Then we managed 3 users (Bego, Mati, Mifli) granting them very specific permissions (SELECT, UPDATE, REVOKE). We also tested access from different domains and changed passwords.</li>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>FLUSH PRIVILEGES:</strong> Why it's necessary when you modify the grant tables directly but not when you use `GRANT/REVOKE` commands.</li>
+                <li><strong>GRANT OPTION:</strong> The ability to let a user (like 'Crispula') give permissions to *other* users. It's dangerous if not controlled!</li>
+            </ul>
+        </li>
+        <li><strong>How I Felt:</strong> 👮 **LIKE A POLICE OFFICER**. Controlling exactly who can delete data and who can only read was fun. I hated the syntax errors when typing `IDENTIFIED BY`.</li>
+        <li><strong>What I'd Improve:</strong> I repeated the same commands many times. I should have created a `.sql` script to run everything at once.</li>
+        <li><strong>Glossary words:</strong> *DCL (Data Control Language)*, *Grant Option*, *Flush Privileges*, *Foreign Key (FK)*, *Revoke*.</li>
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 9/10.</li>
+                <li><strong>Why:</strong> Very complete, covers all CRUD permissions.</li>
+                <li><strong>Improvement:</strong> The part about creating the specific tables was a bit repetitive to type manually.</li>
+            </ul>
+        </li>
+    </ol>
+    <br>
 
-                <p><strong>6. Rating and Feedback:</strong><br>
-                <strong>Score:</strong> 8/10.<br>
-                I liked it because it was practical. I would improve the instructions about saving the rules persistently.</p>
-            </div>
-            </div>
+    <h3>DBA_SQLITE_RA12: "Frutitas Bonitas" Optimization</h3>
+    <ol>
+        <li><strong>Summary:</strong> We managed a local SQLite database for a fruit app (Mandarinas, Melocotones, Caquis). We had to create tables, analyze storage size, optimize performance using logs and `EXPLAIN QUERY PLAN`, and set up automated backups.</li>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>PRAGMA:</strong> Special commands in SQLite to change how the DB behaves (like `PRAGMA synchronous` or `PRAGMA journal_mode`).</li>
+                <li><strong>WAL (Write-Ahead Logging):</strong> A journaling mode that allows simultaneous reading and writing, which is much faster than the default DELETE mode.</li>
+            </ul>
+        </li>
+        <li><strong>How I Felt:</strong> 🍊 **AMUSED** by the fruit names, but surprised by how complex SQLite can be. I thought it was just a simple file.</li>
+        <li><strong>What I'd Improve:</strong> I didn't fully understand the "explain query plan" output at first. I need to study more about database indexing.</li>
+        <li><strong>Glossary words:</strong> *Pragma*, *WAL (Write-Ahead Log)*, *Explain Query Plan*, *Auto-increment*, *Journaling*.</li>
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 7/10.</li>
+                <li><strong>Why:</strong> Good concepts, but SQLite feels less "pro" than MySQL.</li>
+                <li><strong>Improvement:</strong> Provide a larger dataset (thousands of fruits) to really see the performance difference.</li>
+            </ul>
+        </li>
+    </ol>
+    <br>
 
-        <div id="python" class="module-section">
-            <h2 class="module-title">Module: PYTHON</h2>
+    <h3>POSTGRES_DBA_RA34: Equitation DB & Advanced Features</h3>
+    <ol>
+        <li><strong>Summary:</strong> We installed PostgreSQL on Linux, created a Horse Riding database ("Equitacion Suave"), and managed Roles using both CLI and **pgAdmin**. We also implemented advanced features like JSON columns, Arrays, and Materialized Views.</li>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>JSONB in SQL:</strong> Storing JSON data inside a table column. It allows NoSQL flexibility within a relational database.</li>
+                <li><strong>Materialized Views:</strong> Unlike normal views, these store the data physically to make complex queries faster, but you have to refresh them manually.</li>
+            </ul>
+        </li>
+        <li><strong>How I Felt:</strong> 🤩 **IMPRESSED**. pgAdmin is a very nice tool, much better than the command line. Using Arrays in a table felt weird coming from MySQL.</li>
+        <li><strong>What I'd Improve:</strong> The inheritance part (table inheritance) was confusing. I'm not sure when I would use that in real life instead of a Foreign Key.</li>
+        <li><strong>Glossary words:</strong> *JSONB*, *Materialized View*, *pgAdmin*, *Role*, *Table Inheritance*.</li>
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 10/10.</li>
+                <li><strong>Why:</strong> It covered everything from installation to very advanced topics.</li>
+                <li><strong>Improvement:</strong> None, it was excellent.</li>
+            </ul>
+        </li>
+    </ol>
 
-            <div class="challenge-card">
-                <h3>Challenge Name: Web Scraper</h3>
-                
-                <p><strong>1. Summary:</strong><br>
-                We had to create a script to extract data from a website automatically.</p>
+    <br>
+    <a href="#">Go back to top ⬆️</a>
+    <br>
+    <hr>
 
-                <p><strong>2. Complex Concepts Learned:</strong></p>
-                <ul>
-                    <li>HTML Parsing with libraries.</li>
-                    <li>Handling HTTP Requests.</li>
-                </ul>
+    <a name="iaw"></a>
+    <h2 align="center">🕸️ IAW (Implementing Web Applications)</h2>
+    <br>
 
-                <p><strong>3. Feelings:</strong><br>
-                Very easy. I like programming so this was fun.</p>
+    <h3>EXTENSIONES_VSC_IAW_RA1: VS Code & PHP Setup</h3>
+    <ol>
+        <li><strong>Summary:</strong> I researched the best **VS Code extensions** for PHP development. I had to select the top 3 and discard others, explaining the reasons for each choice. Finally, I created a **Markdown (.md)** document in my Git repository with an index linking to each extension review.</li>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>Markdown Anchors:</strong> How to create an internal index (Table of Contents) in a markdown file using `[Link](#anchor)` syntax.</li>
+                <li><strong>Linter vs Formatter:</strong> Understanding the difference between a tool that finds errors (Linter) and one that just makes the code look pretty (Formatter).</li>
+            </ul>
+        </li>
+        <li><strong>How I Felt:</strong> 😐 **OKAY**. Searching for extensions was easy, but writing the report was a bit repetitive. It's useful to have the environment set up, though.</li>
+        <li><strong>What I'd Improve:</strong> I should have tested the "discarded" extensions more thoroughly instead of just relying on their description or star rating.</li>
+        <li><strong>Glossary words:</strong> *Markdown*, *Repository*, *Linter*, *Snippet*, *IntelliSense*.</li>
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 8/10.</li>
+                <li><strong>Why:</strong> Good for starting the course with the right tools.</li>
+                <li><strong>Improvement:</strong> Make us write a small script using those extensions to prove they work.</li>
+            </ul>
+        </li>
+    </ol>
+    <br>
 
-                <p><strong>4. Improvements:</strong><br>
-                I should add error handling (try/except) if the website is down.</p>
+    <h3>DA2_RA15: Dice Game App</h3>
+    <ol>
+        <li><strong>Summary:</strong> I built a web application using **PHP** and HTML to simulate a dice game between two players. It has two pages: a **form** to select the number of dice, faces, and opponent points, and a **results page** that generates random numbers, sums them up, and declares a winner.</li>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li><strong>Handling Forms (`$_POST`):</strong> Sending data from the input form to the PHP script without showing it in the URL (unlike GET).</li>
+                <li><strong>Server-Side Logic:</strong> Using `rand()` inside a loop to generate dynamic HTML content based on user input. It felt like real programming!</li>
+            </ul>
+        </li>
+        <li><strong>How I Felt:</strong> 🎲 **ENTERTAINED**. It was fun to see the random numbers appear. Logic errors (like calculating the winner wrong) were annoying but satisfying to fix.</li>
+        <li><strong>What I'd Improve:</strong> The app looks very ugly because I only used HTML. I need to add **CSS** to make the dice look like real cubes and not just numbers.</li>
+        <li><strong>Glossary words:</strong> *$_POST*, *rand()*, *Form Action*, *Server-Side Scripting*, *Array*.</li>
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 9/10.</li>
+                <li><strong>Why:</strong> Very practical and interactive.</li>
+                <li><strong>Improvement:</strong> Provide some basic CSS assets so we don't have to look at a plain white page.</li>
+            </ul>
+        </li>
+    </ol>
 
-                <p><strong>5. Technical Glossary:</strong></p>
-                <ul class="glossary-list">
-                    <li><strong>String:</strong> A sequence of characters.</li>
-                    <li><strong>Integer:</strong> A whole number.</li>
-                    <li><strong>Loop:</strong> Repeating a block of code.</li>
-                    <li><strong>Variable:</strong> A container for data.</li>
-                    <li><strong>Function:</strong> A block of code designed to perform a particular task.</li>
-                </ul>
+    <br>
+    <a href="#">Go back to top ⬆️</a>
+    <br>
+    <hr>
 
-                <p><strong>6. Rating and Feedback:</strong><br>
-                <strong>Score:</strong> 10/10.<br>
-                Perfect assignment. Clear and useful.</p>
-            </div>
-        </div>
+    <a name="python"></a>
+    <h2 align="center">🐍 PYTHON </h2>
+    <br>
 
-        <div id="bases2" class="module-section">
-            <h2 class="module-title">Module: BASES 2</h2>
-            <p><em>No projects yet. Copy the card code here when ready.</em></p>
-        </div>
+    <h3>EXTENSIONES_VSC_PYTHON_RA1: VS Code & Python Setup</h3>
+    <ol>
+        <li><strong>Summary:</strong> I conducted a study on the best **VS Code extensions** for Python development. I selected the top 3 extensions (likely the core *Python* extension, Pylance, and a formatter like Black) and justified why I kept or discarded several others. The result was a **Markdown (.md)** document with an index in my Git repository.</li>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li>**Language Server Protocol (LSP):** Understanding that extensions like Pylance use the LSP to provide powerful features like code completion and error checking without relying only on the Python interpreter.</li>
+                <li>**Virtual Environments:** Realizing the importance of selecting the correct Python interpreter (often inside a virtual environment) within VS Code for everything to work correctly.</li>
+            </ul>
+        </li>
+        <li><strong>How I Felt:</strong> 🤓 **ORGANIZED**. This task forces you to set up your environment correctly from the start. I found Pylance much better than the old language server.</li>
+        <li><strong>What I'd Improve:</strong> The process of justifying why I discarded certain extensions felt a bit arbitrary if they were not bad, just less popular.</li>
+        <li><strong>Glossary words:</strong> *Pylance*, *Virtual Environment*, *LSP (Language Server Protocol)*, *Interpreter*, *Formatter*.</li>
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 8/10.</li>
+                <li><strong>Why:</strong> Essential step for Python development.</li>
+                <li><strong>Improvement:</strong> Should integrate with the Git extension study for a complete workflow.</li>
+            </ul>
+        </li>
+    </ol>
+    <br>
 
-        <div id="iaw" class="module-section">
-            <h2 class="module-title">Module: IAW</h2>
-            <p><em>No projects yet. Copy the card code here when ready.</em></p>
-        </div>
+    <h3>NAVARREDONDA_PYTHON_RA125: Amusement Park Ticket Simulator</h3>
+    <ol>
+        <li><strong>Summary:</strong> I developed a Python program to calculate the final price of an amusement park ticket based on 7 input parameters and 12 prioritized modification rules (from free entry for seniors/members to fixed weekend surcharges). The core challenge was implementing the **priority system** correctly, where only the highest priority rule that is met applies.</li>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li>**Conditional Logic (`if`/`elif`/`else`):** Mastering the use of `elif` (else if) to ensure that once a high-priority rule is met (e.g., Free Entry, Rule 1), the program stops checking the lower-priority rules (e.g., 50% discount, Rule 2).</li>
+                <li>**Random Simulation:** Implementing the automatic input for "Day of the week" and "Is a club member" using the `random` module to test different scenarios.</li>
+            </ul>
+        </li>
+        <li><strong>How I Felt:</strong> 🧠 **FOCUSED**. This was a pure logic puzzle. It was tricky handling the floating-point math (decimals) correctly and making sure the output format was exactly as requested.</li>
+        <li><strong>What I'd Improve:</strong> The price calculation logic became a huge block of `if/elif`. I could probably refactor it into separate functions to make it cleaner.</li>
+        <li><strong>Glossary words:</strong> *elif*, *Floating Point Arithmetic*, *Random Module*, *Input Validation*, *Prioritized Logic*.</li>
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 10/10.</li>
+                <li><strong>Why:</strong> Excellent practice for real-world business logic and complex priority rules.</li>
+                <li><strong>Improvement:</strong> None, it was a solid programming challenge.</li>
+            </ul>
+        </li>
+    </ol>
+    <br>
 
-         <div id="global" class="module-section">
-            <h2 class="module-title">Module: GLOBAL</h2>
-            <p><em>No projects yet. Copy the card code here when ready.</em></p>
-        </div>
+    <h3>FASTEST_TURTLE_RA12345: Creative Graphics with Turtle</h3>
+    <ol>
+        <li><strong>Summary:</strong> I used the Python **Turtle** graphics library to complete three exercises: 1) Draw the La Salle star, 2) Write my name without using the `write()` function (by drawing letters with lines), and 3) Create a complex, creative drawing using over 30 function calls (many via `for` or `while` loops). </li>
+        <li><strong>Complex Concepts Learned:</strong>
+            <ul>
+                <li>**Procedural Graphics:** Understanding how simple commands (`forward`, `left`, `right`) can create complex shapes when combined with iterative loops (`for` loops and modular arithmetic: `i % 90`).</li>
+                <li>**State Management:** Using functions like `penup()` and `pendown()` to move the drawing cursor without leaving a trace, which was essential for "writing" the name.</li>
+            </ul>
+        </li>
+        <li><strong>How I Felt:</strong> 🎨 **CREATIVE**. It was a fun break from pure logic. I enjoyed making the complex pattern in Exercise 3 (the one that uses `forward(i%90)`). It was visually stunning.</li>
+        <li><strong>What I'd Improve:</strong> The installation process for `tkinter` can sometimes be tricky on different Linux distributions if it's not pre-installed.</li>
+        <li><strong>Glossary words:</strong> *Turtle*, *Tkinter*, *Procedural Generation*, *Modular Arithmetic*, *Pen Up/Down*.</li>
+        <li><strong>Challenge Statement Review:</strong>
+            <ul>
+                <li><strong>Grade:</strong> 9/10.</li>
+                <li><strong>Why:</strong> Great way to learn basic Python structure (loops, functions) in a visual way.</li>
+                <li><strong>Improvement:</strong> Include an exercise that requires user interaction (e.g., drawing based on keyboard input).</li>
+            </ul>
+        </li>
+    </ol>
 
-    </div>
+    <br>
+    <a href="#">Go back to top ⬆️</a>
+    <br>
+    <hr>
 
-    <footer style="background-color: #333; color: white; text-align: center; padding: 10px; margin-top: 20px;">
-        <p>&copy; 2025 My Student Portfolio</p>
-    </footer>
+    <a name="global"></a>
+    <h2 align="center">🌍 GLOBAL </h2>
+    <p align="center"><em>(Pending updates...)</em></p>
+    <br>
+    <a href="#">Go back to top ⬆️</a>
+    <br>
+    <hr>
 
+    <a name="glossary"></a>
+    <h2 align="center">📝 Technical Glossary (Summary)</h2>
+    <table align="center" border="1">
+        <tr>
+            <th>Technical Term</th>
+            <th>Module</th>
+            <th>Traducción al Español</th>
+        </tr>
+        <tr>
+            <td>iptables</td>
+            <td>SECURITY</td>
+            <td>iptables (Cortafuegos/Firewall)</td>
+        </tr>
+        <tr>
+            <td>Brute Force</td>
+            <td>SECURITY</td>
+            <td>Fuerza Bruta</td>
+        </tr>
+        <tr>
+            <td>ACL (Access Control List)</td>
+            <td>SECURITY</td>
+            <td>Lista de Control de Acceso (ACL)</td>
+        </tr>
+        <tr>
+            <td>Sticky Bit / SGID</td>
+            <td>SECURITY</td>
+            <td>Bit Adhesivo / SGID (Permisos especiales)</td>
+        </tr>
+        <tr>
+            <td>SQL Injection</td>
+            <td>SECURITY</td>
+            <td>Inyección SQL</td>
+        </tr>
+        <tr>
+            <td>XSS (Cross-Site Scripting)</td>
+            <td>SECURITY</td>
+            <td>Scripting entre sitios (XSS)</td>
+        </tr>
+        <tr>
+            <td>Payload</td>
+            <td>SECURITY</td>
+            <td>Carga útil (Payload)</td>
+        </tr>
+        <tr>
+            <td>Cryptojacking</td>
+            <td>SECURITY</td>
+            <td>Criptosecuestro</td>
+        </tr>
+        <tr>
+            <td>Sanitization</td>
+            <td>SECURITY</td>
+            <td>Saneamiento / Validación</td>
+        </tr>
+        
+        <tr>
+            <td>InnoDB Buffer Pool</td>
+            <td>BASES2</td>
+            <td>Pool de Buffer de InnoDB</td>
+        </tr>
+        <tr>
+            <td>Slow Query Log</td>
+            <td>BASES2</td>
+            <td>Registro de Consultas Lentas</td>
+        </tr>
+        <tr>
+            <td>My.cnf</td>
+            <td>BASES2</td>
+            <td>Archivo de Configuración de MySQL</td>
+        </tr>
+        <tr>
+            <td>Bind Address</td>
+            <td>BASES2</td>
+            <td>Dirección de Enlace</td>
+        </tr>
+        <tr>
+            <td>Performance Schema</td>
+            <td>BASES2</td>
+            <td>Esquema de Rendimiento</td>
+        </tr>
+        <tr>
+            <td>DCL (Data Control Language)</td>
+            <td>BASES2</td>
+            <td>Lenguaje de Control de Datos (DCL)</td>
+        </tr>
+        <tr>
+            <td>Grant Option</td>
+            <td>BASES2</td>
+            <td>Opción de Concesión</td>
+        </tr>
+        <tr>
+            <td>Flush Privileges</td>
+            <td>BASES2</td>
+            <td>Volcar Privilegios</td>
+        </tr>
+        <tr>
+            <td>Revoke</td>
+            <td>BASES2</td>
+            <td>Revocar</td>
+        </tr>
+        <tr>
+            <td>Foreign Key</td>
+            <td>BASES2</td>
+            <td>Clave Externa / Foránea</td>
+        </tr>
+        <tr>
+            <td>Pragma</td>
+            <td>BASES2</td>
+            <td>Pragma (Comando SQLite)</td>
+        </tr>
+        <tr>
+            <td>WAL (Write-Ahead Log)</td>
+            <td>BASES2</td>
+            <td>Registro de Escritura Anticipada (WAL)</td>
+        </tr>
+        <tr>
+            <td>Explain Query Plan</td>
+            <td>BASES2</td>
+            <td>Explicar Plan de Consulta</td>
+        </tr>
+        <tr>
+            <td>Auto-increment</td>
+            <td>BASES2</td>
+            <td>Auto-incremento</td>
+        </tr>
+        <tr>
+            <td>Journaling</td>
+            <td>BASES2</td>
+            <td>Diario / Registro</td>
+        </tr>
+        <tr>
+            <td>JSONB</td>
+            <td>BASES2</td>
+            <td>JSON Binario (PostgreSQL)</td>
+        </tr>
+        <tr>
+            <td>Materialized View</td>
+            <td>BASES2</td>
+            <td>Vista Materializada</td>
+        </tr>
+        <tr>
+            <td>pgAdmin</td>
+            <td>BASES2</td>
+            <td>pgAdmin (Herramienta gráfica para PostgreSQL)</td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td>BASES2</td>
+            <td>Rol</td>
+        </tr>
+        <tr>
+            <td>Table Inheritance</td>
+            <td>BASES2</td>
+            <td>Herencia de Tabla</td>
+        </tr>
+
+        <tr>
+            <td>Markdown</td>
+            <td>IAW</td>
+            <td>Lenguaje de Marcado Ligero</td>
+        </tr>
+        <tr>
+            <td>Linter</td>
+            <td>IAW</td>
+            <td>Analizador Estático de Código</td>
+        </tr>
+        <tr>
+            <td>IntelliSense</td>
+            <td>IAW</td>
+            <td>Autocompletado Inteligente</td>
+        </tr>
+        <tr>
+            <td>$_POST</td>
+            <td>IAW</td>
+            <td>Variable de Formulario POST</td>
+        </tr>
+        <tr>
+            <td>Server-Side Scripting</td>
+            <td>IAW</td>
+            <td>Programación del Lado del Servidor</td>
+        </tr>
+        
+        <tr>
+            <td>Pylance</td>
+            <td>PYTHON</td>
+            <td>Servidor de Lenguaje para Python</td>
+        </tr>
+        <tr>
+            <td>Virtual Environment</td>
+            <td>PYTHON</td>
+            <td>Entorno Virtual</td>
+        </tr>
+        <tr>
+            <td>LSP (Language Server Protocol)</td>
+            <td>PYTHON</td>
+            <td>Protocolo de Servidor de Lenguaje (LSP)</td>
+        </tr>
+        <tr>
+            <td>elif</td>
+            <td>PYTHON</td>
+            <td>Sino Si</td>
+        </tr>
+        <tr>
+            <td>Turtle</td>
+            <td>PYTHON</td>
+            <td>Tortuga (Librería Gráfica)</td>
+        </tr>
+        <tr>
+            <td>Tkinter</td>
+            <td>PYTHON</td>
+            <td>Tkinter (Librería GUI)</td>
+        </tr>
+        <tr>
+            <td>Modular Arithmetic</td>
+            <td>PYTHON</td>
+            <td>Aritmética Modular</td>
+        </tr>
+        <tr>
+            <td>Procedural Generation</td>
+            <td>PYTHON</td>
+            <td>Generación por Procedimientos</td>
+        </tr>
+        <tr>
+            <td>Pen Up/Down</td>
+            <td>PYTHON</td>
+            <td>Subir/Bajar Lápiz (Turtle)</td>
+        </tr>
+    </table>
+
+    <br>
+    <a href="#">Go back to top ⬆️</a>
+    <br>
+    <br>
+    <br>
+    <hr>
+    
 </body>
+
 </html>
