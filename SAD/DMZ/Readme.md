@@ -93,3 +93,4 @@ Prueba desde Windows con `ping 8.8.8.8` (exitoso) y `tracert 8.8.8.8`. Se visual
 1.  **192.168.0.1** (Paso por FW2).
 2.  **192.168.1.1** (Paso por FW1).
 3.  Salida a Internet.
+![Ping y Tracert](16.png)
