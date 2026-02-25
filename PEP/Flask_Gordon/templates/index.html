@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ctOS // FLASK GORDON OVERRIDE</title>
+    <style>
+        :root {
+            --neon-green: #00ff00;
+            --dark-bg: #050505;
+            --alert-red: #ff0033;
+            --disabled: #333333;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--neon-green);
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 { text-shadow: 0 0 5px var(--neon-green); text-transform: uppercase; }
+        
+        /* ZONA SUPERIOR - SALPICADERO */
+        .dashboard {
+            border: 2px solid var(--neon-green);
+            padding: 30px;
+            margin: 0 auto 20px auto;
+            width: 70%;
+            box-shadow: 0 0 15px var(--neon-green), inset 0 0 10px var(--neon-green);
+            background: #000;
+        }
+        .speed-display {
+            font-size: 5em;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .indicators {
+            display: flex;
+            justify-content: space-between;
+            font-size: 3em;
+            padding: 0 50px;
+        }
+        .blink {
+            animation: hacker-blink 0.5s linear infinite;
+        }
+        @keyframes hacker-blink {
+            0% { opacity: 1; text-shadow: 0 0 20px var(--neon-green); }
+            50% { opacity: 0; text-shadow: none; }
+            100% { opacity: 1; text-shadow: 0 0 20px var(--neon-green); }
+        }
+
+        /* ZONA INFERIOR - CONTROLES */
+        .controls {
+            border: 1px dashed var(--neon-green);
+            padding: 20px;
+            margin: 0 auto;
+            width: 70%;
+            background: #0a0a0a;
+        }
+        .control-group { margin-bottom: 15px; }
+        input[type="number"] {
+            background: #000;
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            padding: 5px;
+            font-family: inherit;
+            width: 60px;
+            text-align: center;
+        }
+        button {
+            background: #000;
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            padding: 10px 20px;
+            margin: 5px;
+            font-family: inherit;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        button:hover:not(:disabled) {
+            background: var(--neon-green);
+            color: #000;
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+        button:disabled {
+            border-color: var(--disabled);
+            color: var(--disabled);
+            cursor: not-allowed;
+            text-shadow: none;
+        }
+        .ascii-art { font-size: 0.8em; line-height: 1.2; margin-bottom: 20px; color: #555;}
+    </style>
+</head>
+<body>
+
+    <h1>[ COCHAZO SUPRIMO ]</h1>
+
+    <div class="dashboard">
+        <h2 id="status_text">ESTADO: APAGADO</h2> <div class="speed-display">
+            <span id="speed_text">0</span> <span style="font-size: 0.4em;">km/h</span> </div>
+        <div class="indicators">
+            <span id="left_indicator">◄◄</span> <span id="right_indicator">►►</span> </div>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label>[SYS_CONFIG] Incremento velocidad: </label>
+            <input type="number" id="increment" value="10"> 
+        </div>
+
+        <div class="control-group">
+            <button onclick="sendAction('arrancar')" id="btn_arrancar">» Arrancar</button> <button onclick="sendAction('apagar')" id="btn_apagar">« Apagar</button> </div>
+
+        <div class="control-group">
+            <button onclick="sendAction('acelerar')" id="btn_acelerar" disabled>Acelerar +</button> <button onclick="sendAction('frenar')" id="btn_frenar" disabled>Frenar -</button> </div>
+
+        <div class="control-group">
+            <button onclick="sendAction('girar_izq')" id="btn_izq" disabled>◄ Girar Izquierda</button> <button onclick="sendAction('girar_der')" id="btn_der" disabled>Girar Derecha ►</button> </div>
+
+        <div class="control-group">
+            <button onclick="sendAction('pitar')" id="btn_pitar" disabled>[!] Pitar</button> </div>
+    </div>
+
+    <audio id="audio_claxon" src="/static/claxon.mp3" preload="auto"></audio>
+
+    <script>
+        function updateUI(state) {
+            const statusText = document.getElementById('status_text');
+            const speedText = document.getElementById('speed_text');
+            const leftInd = document.getElementById('left_indicator');
+            const rightInd = document.getElementById('right_indicator');
+
+            // Actualiza Estado
+            if (state.engine_on) {
+                statusText.innerText = "ESTADO: ENCENDIDO";
+                statusText.style.color = "var(--neon-green)";
+            } else {
+                statusText.innerText = "ESTADO: APAGADO";
+                statusText.style.color = "var(--alert-red)";
+            }
+
+            // Actualiza Velocidad
+            speedText.innerText = state.speed;
+
+            // Actualiza Intermitentes (Parpadeo visual) [cite: 30]
+            if (state.blinker_left) { 
+                leftInd.classList.add('blink'); 
+                leftInd.style.color = "var(--neon-green)";
+            } else { 
+                leftInd.classList.remove('blink'); 
+                leftInd.style.color = "var(--disabled)";
+            }
+
+            if (state.blinker_right) { 
+                rightInd.classList.add('blink'); 
+                rightInd.style.color = "var(--neon-green)";
+            } else { 
+                rightInd.classList.remove('blink'); 
+                rightInd.style.color = "var(--disabled)";
+            }
+
+            // Bloquea/Desbloquea botones según estado del motor [cite: 55]
+            document.getElementById('btn_acelerar').disabled = !state.engine_on;
+            document.getElementById('btn_frenar').disabled = !state.engine_on;
+            document.getElementById('btn_izq').disabled = !state.engine_on;
+            document.getElementById('btn_der').disabled = !state.engine_on;
+            document.getElementById('btn_pitar').disabled = !state.engine_on;
+
+            // Reproduce Claxon
+            if (state.honk) {
+                const audio = document.getElementById('audio_claxon');
+                audio.currentTime = 0;
+                audio.play().catch(e => console.log("Permisos de audio bloqueados por navegador", e));
+            }
+        }
+
+        function sendAction(actionStr) {
+            const inc = document.getElementById('increment').value;
+            fetch('/action', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({action: actionStr, increment: inc})
+            })
+            .then(r => r.json())
+            .then(data => updateUI(data));
+        }
+
+        // Carga el estado inicial nada más abrir
+        fetch('/state')
+            .then(r => r.json())
+            .then(data => updateUI(data));
+    </script>
+</body>
+</html>
